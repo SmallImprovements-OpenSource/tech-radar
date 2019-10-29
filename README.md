@@ -1,9 +1,9 @@
 # Motivation
 
-At [Zalando](http://zalando.de), we maintain a [public Tech
+At [Small Improvements](https://www.small-improvements.com), we maintain a [public Tech
 Radar](http://zalando.github.io/tech-radar/) to help our engineering teams
-align on technology choices. Is is based on the [pioneering work
-by ThoughtWorks](https://www.thoughtworks.com/radar).
+align on technology choices. It is based on the pioneering work
+by [ThoughtWorks](https://www.thoughtworks.com/radar) and [Zalando](https://opensource.zalando.com/tech-radar/).
 
 This repository contains the code to generate the visualization:
 [`radar.js`](/docs/radar.js) (based on [d3.js v4](https://d3js.org)).
@@ -66,8 +66,7 @@ radar_visualization({
 
 Entries are positioned automatically so that they don't overlap.
 
-As a working example, you can check out `docs/index.html` &mdash; the source of our [public Tech
-Radar](http://zalando.github.io/tech-radar/).
+As a working example, you can check out `docs/index.html`
 
 ## Local Development
 
@@ -94,7 +93,7 @@ http://localhost:3000/
 ```
 The MIT License (MIT)
 
-Copyright (c) 2017 Zalando SE
+Copyright (c) 2019 Small Improvements Software GmbH
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
