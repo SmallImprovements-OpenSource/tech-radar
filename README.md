@@ -1,7 +1,7 @@
 # Motivation
 
 At [Small Improvements](https://www.small-improvements.com), we maintain a [public Tech
-Radar](http://zalando.github.io/tech-radar/) to help our engineering teams
+Radar](https://smallimprovements-opensource.github.io/tech-radar/) to help our engineering teams
 align on technology choices. It is based on the pioneering work
 by [ThoughtWorks](https://www.thoughtworks.com/radar) and [Zalando](https://opensource.zalando.com/tech-radar/).
 
