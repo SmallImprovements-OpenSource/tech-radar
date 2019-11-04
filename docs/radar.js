@@ -39,6 +39,7 @@ function radar_visualization(config) {
     return min + (random() + random()) * 0.5 * (max - min);
   }
 
+  const defaultFontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
   const radarMaxWidth = 600;
   const ringMaxWidth = radarMaxWidth / 2;
   const ringInterval = 60;
@@ -228,9 +229,9 @@ function radar_visualization(config) {
         .text(config.rings[i].name)
         .attr("y", -rings[i].radius + (ringInterval * 0.75))
         .attr("text-anchor", "middle")
-        .style("fill", "#e5e5e5")
-        .style("font-family", "Arial, Helvetica")
-        .style("font-size", 42)
+        .style("fill", config.colors.grid)
+        .style("font-family", defaultFontFamily)
+        .style("font-size", 30)
         .style("font-weight", "bold")
         .style("pointer-events", "none")
         .style("user-select", "none");
@@ -244,7 +245,7 @@ function radar_visualization(config) {
       .attr("transform", translate(footer_offset.x, footer_offset.y))
       .text("▲ moved up     ▼ moved down")
       .attr("xml:space", "preserve")
-      .style("font-family", "Arial, Helvetica")
+      .style("font-family", defaultFontFamily)
       .style("font-size", "10");
 
     // legend
@@ -303,8 +304,8 @@ function radar_visualization(config) {
     .attr("ry", 4)
     .style("fill", "#333");
   bubble.append("text")
-    .style("font-family", "sans-serif")
-    .style("font-size", "10px")
+    .style("font-family", defaultFontFamily)
+    .style("font-size", 13)
     .style("fill", "#fff");
   bubble.append("path")
     .attr("d", "M 0,0 10,0 5,8 z")
@@ -389,8 +390,8 @@ function radar_visualization(config) {
         .attr("y", 3)
         .attr("text-anchor", "middle")
         .style("fill", "#fff")
-        .style("font-family", "Arial, Helvetica")
-        .style("font-size", function(d) { return blip_text.length > 2 ? "8" : "9"; })
+        .style("font-family", defaultFontFamily)
+        .style("font-size", 10)
         .style("pointer-events", "none")
         .style("user-select", "none");
     }
