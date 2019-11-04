@@ -39,19 +39,21 @@ function radar_visualization(config) {
     return min + (random() + random()) * 0.5 * (max - min);
   }
 
+  const radarMaxWidth = 600;
+  const ringMaxWidth = radarMaxWidth / 2;
+  const ringInterval = 60;
+  const rings = config.rings
+    .map((ring, index) => ({
+      radius: ringMaxWidth - index * ringInterval,
+    }))
+    .reverse();
+
   // radial_min / radial_max are multiples of PI
   const quadrants = [
     { radial_min: 0, radial_max: 0.5, factor_x: 1, factor_y: 1 },
     { radial_min: 0.5, radial_max: 1, factor_x: -1, factor_y: 1 },
     { radial_min: -1, radial_max: -0.5, factor_x: -1, factor_y: -1 },
     { radial_min: -0.5, radial_max: 0, factor_x: 1, factor_y: -1 }
-  ];
-
-  const rings = [
-    { radius: 130 },
-    { radius: 190 },
-    { radius: 250 },
-    { radius: 300 }
   ];
 
   const footer_offset =
@@ -174,7 +176,7 @@ function radar_visualization(config) {
 
   var pagePadding = 40;
   var windowWidth = document.documentElement.clientWidth - pagePadding;
-  var radarWidth = Math.min(windowWidth, 602);
+  var radarWidth = Math.min(windowWidth, radarMaxWidth + 2);
 
   var svg = d3.select("svg#" + config.svg_id)
     .style("background-color", config.colors.background)
@@ -224,7 +226,7 @@ function radar_visualization(config) {
     if (config.print_layout) {
       grid.append("text")
         .text(config.rings[i].name)
-        .attr("y", -rings[i].radius + 50)
+        .attr("y", -rings[i].radius + (ringInterval * 0.75))
         .attr("text-anchor", "middle")
         .style("fill", "#e5e5e5")
         .style("font-family", "Arial, Helvetica")
