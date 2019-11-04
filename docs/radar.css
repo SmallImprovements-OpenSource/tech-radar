@@ -27,3 +27,11 @@ li {
 .blip {
   cursor: pointer;
 }
+
+.legend-item {
+  cursor: pointer;
+}
+
+.legend-item--highlighted {
+  background-color: #DADDE0;
+}

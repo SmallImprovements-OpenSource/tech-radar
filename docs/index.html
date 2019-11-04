@@ -19,232 +19,229 @@
   <h1>Small Improvements Tech Radar — 2019.10</h1>
 
   <svg id="radar"></svg>
-
-  <script>
-    radar_visualization({
-      svg_id: "radar",
-      width: "100%",
-      height: 1000,
-      colors: {
-        background: "#fff",
-        grid: "#bbb",
-        inactive: "#ddd"
-      },
-      quadrants: [
-        { name: "Techniques" },
-        { name: "Tools" },
-        { name: "Platforms" },
-        { name: "Languages & Frameworks" }
-      ],
-      rings: [
-        { name: "ADOPT", color: "#2ecd72" },
-        { name: "TRIAL", color: "#4495d8" },
-        { name: "ASSESS", color: "#ffcc00" },
-        { name: "HOLD", color: "#e06839" }
-      ],
-      print_layout: true,
-      show_links: true,
-      // zoomed_quadrant: 0,
-      //ENTRIES
-      entries: [
-          {
-            quadrant: 0,
-            ring: 0,
-            label: "DDD",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 0,
-            ring: 1,
-            label: "Functional Programming",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 1,
-            ring: 0,
-            label: "Looker",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 1,
-            ring: 0,
-            label: "Airtable",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 1,
-            ring: 0,
-            label: "Appcues",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 1,
-            ring: 0,
-            label: "Locust",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 2,
-            ring: 0,
-            label: "App Engine",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 2,
-            ring: 0,
-            label: "Datastore",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 2,
-            ring: 0,
-            label: "BigQuery",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 2,
-            ring: 0,
-            label: "Cloud Functions",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 2,
-            ring: 1,
-            label: "Redis",
-            active: true,
-            moved: 1
-          },
-          {
-            quadrant: 2,
-            ring: 3,
-            label: "Memcache",
-            active: true,
-            moved: -1
-          },
-          {
-            quadrant: 3,
-            ring: 0,
-            label: "Java",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 3,
-            ring: 0,
-            label: "JavaScript",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 3,
-            ring: 0,
-            label: "TypeScript",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 3,
-            ring: 0,
-            label: "Final-Form",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 3,
-            ring: 1,
-            label: "Node",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 3,
-            ring: 2,
-            label: "Go",
-            description: "<a href='https://golang.org'>Go</a> is awesome.",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 3,
-            ring: 3,
-            label: "Wicket",
-            active: true,
-            moved: -1
-          },
-          {
-            quadrant: 3,
-            ring: 0,
-            label: "Spring",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 3,
-            ring: 0,
-            label: "React",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 3,
-            ring: 3,
-            label: "AngularJS",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 3,
-            ring: 3,
-            label: "Redux",
-            active: true,
-            moved: 0
-          },
-          {
-            quadrant: 3,
-            ring: 1,
-            label: "Emotion",
-            active: true,
-            moved: 1
-          },
-      ]
-      //ENTRIES
-    });
-    </script>
-
-    <div class="information">
-      <div>
-        <h3>What is the Tech Radar?</h3>
-        <p>
-          The Small Improvements Tech Radar is a list of technologies, complemented by an assessment result, called <em>ring assignment</em>. We use four rings with the following semantics:
-        </p>
-        <ul>
-          <li><strong>ADOPT</strong> &mdash; Technologies we have high confidence in to serve our purpose, also in large scale. Technologies with a usage culture in our Small Improvements production environment, low risk and recommended to be widely used.</li>
-          <li><strong>TRIAL</strong> &mdash; Technologies that we have seen work with success in project work to solve a real problem; first serious usage experience that confirm benefits and can uncover limitations. TRIAL technologies are slightly more risky; some engineers in our organization walked this path and will share knowledge and experiences.</li>
-          <li><strong>ASSESS</strong> &mdash; Technologies that are promising and have clear potential value-add for us; technologies worth to invest some research and prototyping efforts in to see if it has impact. ASSESS technologies have higher risks; they are often brand new and highly unproven in our organisation. You will find some engineers that have knowledge in the technology and promote it, you may even find teams that have started a prototyping effort.</li>
-          <li><strong>HOLD</strong> &mdash; Technologies not recommended to be used for new projects. Technologies that we think are not (yet) worth to (further) invest in. HOLD technologies should not be used for new projects, but usually can be continued for existing projects.</li>
-        </ul>
-      </div>
-      <div>
-        <h3>What is the purpose?</h3>
-        <p>
-        The Tech Radar is a tool to inspire and support engineering teams at Small Improvements to pick the best technologies for new projects; it provides a platform to share knowledge and experience in technologies, to reflect on technology decisions and continuously evolve our technology landscape. Based on the <a href="https://www.thoughtworks.com/radar">pioneering work of ThoughtWorks</a>, our Tech Radar sets out the changes in technologies that are interesting in software development &mdash; changes that we think our engineering teams should pay attention to and consider using in their projects.
-        </p>
-        <p>
-        <em>BTW, if you would like to create your own Tech Radar &mdash; we have <a href="https://github.com/zalando/tech-radar">open sourced the code</a> to generate this visualization.</em>
-        </p>
-      </div>
+  <div class="information">
+    <div>
+      <h3>Legend</h3>
+      <div id="legend-content"></div>
     </div>
+    <div>
+      <h3>What is the Tech Radar?</h3>
+      <p>
+        The Small Improvements Tech Radar is a list of technologies, complemented by an assessment result, called <em>ring assignment</em>. We use four rings with the following semantics:
+      </p>
+      <ul>
+        <li><strong>ADOPT</strong> &mdash; Technologies we have high confidence in to serve our purpose, also in large scale. Technologies with a usage culture in our Small Improvements production environment, low risk and recommended to be widely used.</li>
+        <li><strong>TRIAL</strong> &mdash; Technologies that we have seen work with success in project work to solve a real problem; first serious usage experience that confirm benefits and can uncover limitations. TRIAL technologies are slightly more risky; some engineers in our organization walked this path and will share knowledge and experiences.</li>
+        <li><strong>ASSESS</strong> &mdash; Technologies that are promising and have clear potential value-add for us; technologies worth to invest some research and prototyping efforts in to see if it has impact. ASSESS technologies have higher risks; they are often brand new and highly unproven in our organisation. You will find some engineers that have knowledge in the technology and promote it, you may even find teams that have started a prototyping effort.</li>
+        <li><strong>HOLD</strong> &mdash; Technologies not recommended to be used for new projects. Technologies that we think are not (yet) worth to (further) invest in. HOLD technologies should not be used for new projects, but usually can be continued for existing projects.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>What is the purpose?</h3>
+      <p>
+      The Tech Radar is a tool to inspire and support engineering teams at Small Improvements to pick the best technologies for new projects; it provides a platform to share knowledge and experience in technologies, to reflect on technology decisions and continuously evolve our technology landscape. Based on the <a href="https://www.thoughtworks.com/radar">pioneering work of ThoughtWorks</a>, our Tech Radar sets out the changes in technologies that are interesting in software development &mdash; changes that we think our engineering teams should pay attention to and consider using in their projects.
+      </p>
+      <p>
+      <em>BTW, if you would like to create your own Tech Radar &mdash; we have <a href="https://github.com/zalando/tech-radar">open sourced the code</a> to generate this visualization.</em>
+      </p>
+    </div>
+  </div>
 </div>
+
+<script>
+  radar_visualization({
+    svg_id: "radar",
+    colors: {
+      background: "#fff",
+      grid: "#bbb",
+      inactive: "#ddd"
+    },
+    quadrants: [
+      { name: "Techniques" },
+      { name: "Tools" },
+      { name: "Platforms" },
+      { name: "Languages & Frameworks" }
+    ],
+    rings: [
+      { name: "ADOPT", color: "#2ecd72" },
+      { name: "TRIAL", color: "#4495d8" },
+      { name: "ASSESS", color: "#ffcc00" },
+      { name: "HOLD", color: "#e06839" }
+    ],
+    print_layout: true,
+    entries: [
+        {
+          quadrant: 0,
+          ring: 0,
+          label: "DDD",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 0,
+          ring: 1,
+          label: "Functional Programming",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 0,
+          label: "Looker",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 0,
+          label: "Airtable",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 0,
+          label: "Appcues",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 1,
+          ring: 0,
+          label: "Locust",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 2,
+          ring: 0,
+          label: "App Engine",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 2,
+          ring: 0,
+          label: "Datastore",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 2,
+          ring: 0,
+          label: "BigQuery",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 2,
+          ring: 0,
+          label: "Cloud Functions",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 2,
+          ring: 1,
+          label: "Redis",
+          active: true,
+          moved: 1
+        },
+        {
+          quadrant: 2,
+          ring: 3,
+          label: "Memcache",
+          active: true,
+          moved: -1
+        },
+        {
+          quadrant: 3,
+          ring: 0,
+          label: "Java",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 0,
+          label: "JavaScript",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 0,
+          label: "TypeScript",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 0,
+          label: "Final-Form",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 1,
+          label: "Node",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 2,
+          label: "Go",
+          description: "<a href='https://golang.org'>Go</a> is awesome.",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 3,
+          label: "Wicket",
+          active: true,
+          moved: -1
+        },
+        {
+          quadrant: 3,
+          ring: 0,
+          label: "Spring",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 0,
+          label: "React",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 3,
+          label: "AngularJS",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 3,
+          label: "Redux",
+          active: true,
+          moved: 0
+        },
+        {
+          quadrant: 3,
+          ring: 1,
+          label: "Emotion",
+          active: true,
+          moved: 1
+        },
+    ]
+  });
+  </script>
 
 <div class="modal micromodal-slide" id="modal" aria-hidden="true">
   <div class="modal__overlay" tabindex="-1" data-micromodal-close>
