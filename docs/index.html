@@ -6,27 +6,30 @@
 <link rel="shortcut icon" href="https://www.small-improvements.com/favicon.ico">
 
 <script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 <script src="radar.js"></script>
 
 <link rel="stylesheet" href="radar.css">
+<link rel="stylesheet" href="modal.css">
 </head>
 
 <body>
 
 <div class="content">
+  <h1>Small Improvements Tech Radar — 2019.10</h1>
+
   <svg id="radar"></svg>
 
   <script>
     radar_visualization({
       svg_id: "radar",
-      width: 1450,
+      width: "100%",
       height: 1000,
       colors: {
         background: "#fff",
         grid: "#bbb",
         inactive: "#ddd"
       },
-      title: "Small Improvements Tech Radar — 2019.10",
       quadrants: [
         { name: "Techniques" },
         { name: "Tools" },
@@ -49,7 +52,6 @@
             ring: 0,
             label: "DDD",
             active: true,
-            link: "techniques/ddd.html",
             moved: 0
           },
           {
@@ -57,7 +59,6 @@
             ring: 1,
             label: "Functional Programming",
             active: true,
-            link: "techniques/functional-programming.html",
             moved: 0
           },
           {
@@ -65,7 +66,6 @@
             ring: 0,
             label: "Looker",
             active: true,
-            link: "tools/looker.html",
             moved: 0
           },
           {
@@ -73,7 +73,6 @@
             ring: 0,
             label: "Airtable",
             active: true,
-            link: "tools/airtable.html",
             moved: 0
           },
           {
@@ -81,7 +80,6 @@
             ring: 0,
             label: "Appcues",
             active: true,
-            link: "tools/appcues.html",
             moved: 0
           },
           {
@@ -89,7 +87,6 @@
             ring: 0,
             label: "Locust",
             active: true,
-            link: "tools/locust.html",
             moved: 0
           },
           {
@@ -97,7 +94,6 @@
             ring: 0,
             label: "App Engine",
             active: true,
-            link: "platforms/appengine.html",
             moved: 0
           },
           {
@@ -105,7 +101,6 @@
             ring: 0,
             label: "Datastore",
             active: true,
-            link: "platforms/datastore.html",
             moved: 0
           },
           {
@@ -113,7 +108,6 @@
             ring: 0,
             label: "BigQuery",
             active: true,
-            link: "platforms/bigquery.html",
             moved: 0
           },
           {
@@ -121,7 +115,6 @@
             ring: 0,
             label: "Cloud Functions",
             active: true,
-            link: "platforms/cloudfunctions.html",
             moved: 0
           },
           {
@@ -129,7 +122,6 @@
             ring: 1,
             label: "Redis",
             active: true,
-            link: "platforms/redis.html",
             moved: 1
           },
           {
@@ -137,7 +129,6 @@
             ring: 3,
             label: "Memcache",
             active: true,
-            link: "platforms/memcache.html",
             moved: -1
           },
           {
@@ -145,7 +136,6 @@
             ring: 0,
             label: "Java",
             active: true,
-            link: "languages/java.html",
             moved: 0
           },
           {
@@ -153,7 +143,6 @@
             ring: 0,
             label: "JavaScript",
             active: true,
-            link: "languages/javascript.html",
             moved: 0
           },
           {
@@ -161,7 +150,6 @@
             ring: 0,
             label: "TypeScript",
             active: true,
-            link: "languages/typescript.html",
             moved: 0
           },
           {
@@ -169,7 +157,6 @@
             ring: 0,
             label: "Final-Form",
             active: true,
-            link: "languages/final-form.html",
             moved: 0
           },
           {
@@ -177,15 +164,14 @@
             ring: 1,
             label: "Node",
             active: true,
-            link: "languages/node.html",
             moved: 0
           },
           {
             quadrant: 3,
             ring: 2,
             label: "Go",
+            description: "<a href='https://golang.org'>Go</a> is awesome.",
             active: true,
-            link: "languages/go.html",
             moved: 0
           },
           {
@@ -193,7 +179,6 @@
             ring: 3,
             label: "Wicket",
             active: true,
-            link: "frameworks/wicket.html",
             moved: -1
           },
           {
@@ -201,7 +186,6 @@
             ring: 0,
             label: "Spring",
             active: true,
-            link: "frameworks/spring.html",
             moved: 0
           },
           {
@@ -209,7 +193,6 @@
             ring: 0,
             label: "React",
             active: true,
-            link: "frameworks/react.html",
             moved: 0
           },
           {
@@ -217,7 +200,6 @@
             ring: 3,
             label: "AngularJS",
             active: true,
-            link: "frameworks/angularjs.html",
             moved: 0
           },
           {
@@ -225,7 +207,6 @@
             ring: 3,
             label: "Redux",
             active: true,
-            link: "frameworks/redux.html",
             moved: 0
           },
           {
@@ -233,7 +214,6 @@
             ring: 1,
             label: "Emotion",
             active: true,
-            link: "frameworks/emotion.html",
             moved: 1
           },
       ]
@@ -264,6 +244,21 @@
         </p>
       </div>
     </div>
+</div>
+
+<div class="modal micromodal-slide" id="modal" aria-hidden="true">
+  <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <header class="modal__header">
+        <h2 class="modal__title" id="modal-title"></h2>
+        <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+      </header>
+      <main class="modal__content" id="modal-content"></main>
+      <footer class="modal__footer">
+        <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+      </footer>
+    </div>
+  </div>
 </div>
 
 <!--

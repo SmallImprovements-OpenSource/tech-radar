@@ -266,16 +266,8 @@ function radar_visualization(config) {
     );
   }
 
-  // draw title and legend (only in print layout)
+  // draw legend (only in print layout)
   if (config.print_layout) {
-
-    // title
-    radar.append("text")
-      .attr("transform", translate(title_offset.x, title_offset.y))
-      .text(config.title)
-      .style("font-family", "Arial, Helvetica")
-      .style("font-size", "34");
-
     // footer
     radar.append("text")
       .attr("transform", translate(footer_offset.x, footer_offset.y))
@@ -388,16 +380,18 @@ function radar_visualization(config) {
         .on("mouseover", function(d) { showBubble(d); highlightLegendItem(d); })
         .on("mouseout", function(d) { hideBubble(d); unhighlightLegendItem(d); });
 
+  function showModal(event) {
+    MicroModal.show('modal');
+    var modalTitle = document.querySelector('#modal-title');
+    modalTitle.innerHTML = event.label;
+    var modalContent = document.querySelector('#modal-content');
+    modalContent.innerHTML = event.description || 'No description provided';
+  }
+
   // configure each blip
   blips.each(function(d) {
-    var blip = d3.select(this);
-
-    // blip link
-    const showLinks = !config.print_layout || config.show_links;
-    if (showLinks && d.active && d.hasOwnProperty("link")) {
-      blip = blip.append("a")
-        .attr("xlink:href", d.link);
-    }
+    var blip = d3.select(this)
+      .on("click", showModal);
 
     // blip shape
     if (d.moved > 0) {

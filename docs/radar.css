@@ -23,3 +23,7 @@ li {
   gap: 20px;
   margin: 0 auto;
 }
+
+.blip {
+  cursor: pointer;
+}
