@@ -174,18 +174,15 @@ function radar_visualization(config) {
 
   var pagePadding = 40;
   var windowWidth = document.documentElement.clientWidth - pagePadding;
-  var height = windowWidth / 1.5;
-  console.log('windowWidth: ', windowWidth);
-  console.log('height: ', height);
+  var radarWidth = Math.min(windowWidth, 602);
 
   var svg = d3.select("svg#" + config.svg_id)
     .style("background-color", config.colors.background)
-    .style("width", "100%")
-    .attr("width", windowWidth)
-    .attr("height", height);
+    .attr("width", radarWidth)
+    .attr("height", radarWidth);
 
   var radar = svg.append("g");
-  radar.attr("transform", translate(windowWidth / 2, height / 2));
+  radar.attr("transform", translate(radarWidth / 2, radarWidth / 2));
 
   var grid = radar.append("g");
 
@@ -252,12 +249,12 @@ function radar_visualization(config) {
     var legendNode = document.querySelector('#legend-content');
     for (var quadrant = 0; quadrant < 4; quadrant++) {
       var quadrantNode = document.createElement("div");
-      var quadrantHeaderNode = document.createElement("h4");
+      var quadrantHeaderNode = document.createElement("h3");
       quadrantHeaderNode.innerHTML = config.quadrants[quadrant].name;
       quadrantNode.appendChild(quadrantHeaderNode);
       for (var ring = 0; ring < 4; ring++) {
         var ringNode = document.createElement("div");
-        var ringHeaderNode = document.createElement("h5");
+        var ringHeaderNode = document.createElement("h4");
         ringHeaderNode.innerHTML = config.rings[ring].name;
         ringNode.appendChild(ringHeaderNode);
         var technologies = segmented[quadrant][ring];

@@ -1,6 +1,11 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 15px;
   padding: 10px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .content {
@@ -9,8 +14,28 @@ body {
   margin: 0 auto;
 }
 
+.radar-and-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, auto));
+  gap: 10px;
+}
+
+.radar {
+  margin: 0 auto;
+}
+
+.legend-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
 h3 {
-  margin-top: 10px;
+  margin: 20px 0 3px 0;
+}
+
+h4 {
+  margin: 15px 0 3px 0;
 }
 
 li {
@@ -29,7 +54,12 @@ li {
 }
 
 .legend-item {
+  font-size: 13px;
   cursor: pointer;
+  border-radius: 10px;
+  padding: 1px 5px;
+  margin-left: -5px;
+  margin-bottom: 2px;
 }
 
 .legend-item--highlighted {
