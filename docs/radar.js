@@ -355,23 +355,30 @@ function radar_visualization(config) {
         .on("mouseout", function(d) { hideBubble(d); unhighlightLegendItem(d); });
 
   function showModal(event) {
-    var modalTitle = document.querySelector('#modal-title');
-    modalTitle.innerHTML = event.label;
-    var modalContent = document.querySelector('#modal-content');
+    const modalTitle = document.querySelector('#modal-title');
+    const modalContent = document.querySelector('#modal-content');
     // Reset content.
-    modalContent.innerHTML = '';
-    const description = document.createElement("p");
-    description.innerHTML = event.description || 'No description provided';
-    modalContent.appendChild(description);
+    modalTitle.innerHTML = "";
+    modalContent.innerHTML = "";
     if (event.website) {
-      const link = document.createElement("a");
-      link.href = event.website;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.innerHTML = 'Website';
-      modalContent.appendChild(link);
+      modalTitle.appendChild(createLink(event.website, event.label, 'Go to official website'));
+    } else {
+      modalTitle.innerHTML = event.label;
     }
+    const description = document.createElement("p");
+    description.innerHTML = event.description || "No description provided yet.";
+    modalContent.appendChild(description);
     MicroModal.show('modal');
+  }
+
+  function createLink(href, innerHTML, title) {
+    const link = document.createElement("a");
+    link.href = href;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.innerHTML = innerHTML;
+    link.title = title;
+    return link;
   }
 
   // configure each blip
