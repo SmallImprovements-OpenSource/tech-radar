@@ -355,11 +355,23 @@ function radar_visualization(config) {
         .on("mouseout", function(d) { hideBubble(d); unhighlightLegendItem(d); });
 
   function showModal(event) {
-    MicroModal.show('modal');
     var modalTitle = document.querySelector('#modal-title');
     modalTitle.innerHTML = event.label;
     var modalContent = document.querySelector('#modal-content');
-    modalContent.innerHTML = event.description || 'No description provided';
+    // Reset content.
+    modalContent.innerHTML = '';
+    const description = document.createElement("p");
+    description.innerHTML = event.description || 'No description provided';
+    modalContent.appendChild(description);
+    if (event.website) {
+      const link = document.createElement("a");
+      link.href = event.website;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.innerHTML = 'Website';
+      modalContent.appendChild(link);
+    }
+    MicroModal.show('modal');
   }
 
   // configure each blip
