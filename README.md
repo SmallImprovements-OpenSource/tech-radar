@@ -9,6 +9,28 @@ This repository contains the code to generate the visualization:
 [`radar.js`](/docs/radar.js) (based on [d3.js v4](https://d3js.org)).
 Feel free to use and adapt it for your own purposes.
 
+## Contributing
+
+To add a new technology/technique to the radar, edit [`index.html`](/docs/index.html) and add to `entries`
+
+```js
+<script>
+  radar_visualization({
+  ...
+    entries: [
+        {
+          quadrant: 0,
+          ring: 0,
+          label: "Name of tool/technique",
+          website: "Main url for more information"
+          description: `
+           A short descirption of what it is (two sentences) followed by why we use/don't use it at Small Improvements
+           `
+          active: true,
+          moved: 0
+        },
+```
+
 ## Usage
 
 1. include `d3.js` and `radar.js`:

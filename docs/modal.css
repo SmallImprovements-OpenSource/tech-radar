@@ -24,6 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .modal__title {
@@ -51,8 +52,7 @@
 .modal__header .modal__close:before { content: "\2715"; }
 
 .modal__content {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 10px;
   line-height: 1.5;
   color: #17191A;
 }
@@ -66,15 +66,13 @@
   background-color: #F5F5F5;
   color: #17191A;
   border-radius: 3px;
-  border-style: none;
-  border-width: 0;
+  border: 1px solid rgba(0, 0, 0, .07);
   cursor: pointer;
   -webkit-appearance: button;
   text-transform: none;
   overflow: visible;
   line-height: 1.15;
   margin: 0;
-  will-change: transform;
   -moz-osx-font-smoothing: grayscale;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
