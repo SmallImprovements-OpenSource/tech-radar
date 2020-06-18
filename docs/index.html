@@ -19,7 +19,7 @@
 <body>
 
 <div class="content">
-  <h1>Small Improvements Tech Radar — 2019.10</h1>
+  <h1>Small Improvements Tech Radar — 2020.01</h1>
 
   <div class="radar-and-legend">
     <svg class="radar" id="radar"></svg>
@@ -64,7 +64,7 @@
       { name: "Techniques" },
       { name: "Tools" },
       { name: "Platforms" },
-      { name: "Languages & Frameworks" }
+      { name: "Languages, Frameworks & Libraries" }
     ],
     rings: [
       { name: "ADOPT", color: "#2ecd72" },
@@ -80,7 +80,10 @@
         label: "DDD",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Domain-Driven Design (DDD) is an approach to software development that connects the implementation with an evolving model.</p>
+        <p>We use DDD where appropriate within our codebase to reduce complexity and keep the coding model close to the reality.</p>`
       },
       {
         quadrant: 0,
@@ -88,47 +91,26 @@
         label: "Functional Programming",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Functional programming (FP) is a style of programming that treats computation as the evaluation of mathematical functions.
+          Strict FP avoids side-effects and mutable data.
+          </p>
+          <p>We are often inspired by FP and parts of both our front-end and back-end are written in a functional style. We use the lodash/fp 
+            (front-end) and Fugue (back-end) libraries to help us achieve this functional style.</p>
+        `
       },
       {
         quadrant: 1,
-        ring: 0,
-        label: "Looker",
-        website: "",
-        active: true,
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 0,
-        label: "Airtable",
-        website: "",
-        active: true,
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 0,
-        label: "Appcues",
-        website: "",
-        active: true,
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 0,
+        ring: 1,
         label: "Locust",
         website: "",
         active: true,
-        moved: 0
-      },
-      {
-        quadrant: 1,
-        ring: 0,
-        label: "SendGrid",
-        website: "https://sendgrid.com",
-        active: true,
-        moved: 0
+        moved: 0,
+        description: `
+        <p>Locust is an open source load testing framework written in Python.</p>
+        <p>We use Locust to ensure Small Improvements can handle higher than expected traffic and to test potential bottlenecks in our application.</p>
+        `
       },
       {
         quadrant: 1,
@@ -136,7 +118,11 @@
         label: "Docker",
         website: "https://www.docker.com",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Docker is a container virtualization service that packages an application and its dependencies in a container that can run on any Linux-based system</p>
+        <p>We use Docker to perform repeatable builds of our application and for local development in order to spin up mock versions of cloud services.</p>
+        `
       },
       {
         quadrant: 1,
@@ -144,7 +130,11 @@
         label: "TrackJS",
         website: "https://trackjs.com",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>TrackJS is an error tracking platform.</p>
+        <p>We use TrackJS to monitor our application for errors experienced by clients.</p>
+        `
       },
       {
         quadrant: 1,
@@ -152,23 +142,36 @@
         label: "Google Analytics",
         website: "https://analytics.google.com",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Google Analytics is a web analytics platform.</p>
+        <p>We use Google Analytics to monitor usage of our application (all data is anonymized). This data helps us understand where we can add more value to the platform in the future.</p>
+        `
       },
       {
         quadrant: 2,
         ring: 0,
         label: "App Engine",
-        website: "",
+        website: "https://cloud.google.com/appengine",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Google App Engine is a Platform as a Service (PaaS) cloud computing platform.</p>
+        <p>The majority of our cloud infrastructure runs on App Engine. This allows us to focus on building our application instead of worrying about servers and networks.</p>
+        `
       },
       {
         quadrant: 2,
         ring: 0,
-        label: "Datastore",
+        label: "Google Datastore",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Google Datastore is a NoSQL database.</p>
+        <p>Datastore goes hand-in-hand with App Engine and hosts our main database. The datastore scales very well and is able to handle a very high load.
+          As with the App Engine, Datastore is fully managed so we don't have to worry about bootstrapping servers and maintaining releases.</p>
+        `
       },
       {
         quadrant: 2,
@@ -176,7 +179,11 @@
         label: "BigQuery",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Google BigQuery is a SQL data warehouse.</p>
+        <p>We use BigQuery to store anonymized business data from various sources. BigQuery is used by various teams in the organization to analyze data and make decisions.</p> 
+        `
       },
       {
         quadrant: 2,
@@ -184,16 +191,11 @@
         label: "Cloud Functions",
         website: "",
         active: true,
-        moved: 0
-      },
-      {
-        quadrant: 2,
-        ring: 0,
-        label: "Chargebee",
-        website: "https://www.chargebee.com",
-        description: ``,
-        active: true,
-        moved: 1
+        moved: 0,
+        description:`
+        <p>Google Cloud Functions is a Servlesss cloud computing platform.</p>
+        <p>We use Cloud Functions to perform simple, self-contained tasks independently from the rest of our application. Serverless functions scale up almost infinitely and allow us to deploy new services very quickly.</p>
+        `
       },
       {
         quadrant: 2,
@@ -217,7 +219,11 @@
         label: "Memcache",
         website: "",
         active: true,
-        moved: -1
+        moved: -1,
+        description:`
+        <p>Memcache is an in-memory cache.</p>
+        <p>Originally bundled with App Engine, we use Memcache to cache queries to the Datastore. We have begun to use Redis for our caching needs instead so Memcache is no longer recommended.</p>
+        `
       },
       {
         quadrant: 3,
@@ -225,7 +231,11 @@
         label: "Java",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Java is an object-oriented programming language. It is the 5th most popular language (behind JavaScript, HTML, SQL and Python) according to StackOverflow's most recent survey.</p>
+        <p>We use Java version 8 to run our backend application services, mainly using the Spring web framework.</p>
+        `
       },
       {
         quadrant: 3,
@@ -233,7 +243,11 @@
         label: "JavaScript",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>JavaScript (JS) is an interpreted programming language and provides the client-side (browser) behaviour for modern web applications.</p>
+        <p>We use JS to power our Single Page Application (SPA) using both the AngularJS and React frameworks.</p>
+        `
       },
       {
         quadrant: 3,
@@ -241,23 +255,36 @@
         label: "TypeScript",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>TypeScript is a superset of JavaScript that adds static typing.</p>
+        <p>We use TypeScript to provide type safety to our JavaScript, helping us catch bugs quicker and write better, more readable code.</p>
+        `
       },
       {
         quadrant: 3,
         ring: 0,
-        label: "Final-Form",
+        label: "Final Form",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Final Form is a JavaScript form library.</p>
+        <p>In combination with React, Final Form powers the majority of the forms in Small Improvements. Final Form makes development of form-based applications simpler and less error prone.</p>
+        `
       },
       {
         quadrant: 3,
         ring: 1,
-        label: "Node",
+        label: "Node.js",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Node.js (Node) is an open source JavaScript runtime environment that executes JavaScript outside of a browser.</p>
+        <p>Many of our internal tools, as well as our Cloud Functions run using Node.js. Node enables us to use the existing 
+          JavaScript knowledge in the team to great effect outside of the browser.</p>
+        `
       },
       {
         quadrant: 3,
@@ -265,15 +292,24 @@
         label: "Wicket",
         website: "",
         active: true,
-        moved: -1
+        moved: -1,
+        description:`
+        <p>Wicket is a component based web application framework for Java.</p>
+        <p>Used in the early days of Small Improvements, Wicket was a great way to build web applications fast and reliably. Wicket has since been replaced by the Spring framework
+          as our Single Page client-side application got increasingly larger and we required REST APIs rather than full server-side rendering.</p>
+        `
       },
       {
         quadrant: 3,
         ring: 0,
-        label: "Spring",
+        label: "Spring Framework",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Spring is a web application and Inversion of Control (IOC) framework for Java.</p>
+        <p>Our modern REST API runs on the Spring Web framework. We also rely heavily on Spring Security and dependency injection.</p>
+        `
       },
       {
         quadrant: 3,
@@ -281,7 +317,12 @@
         label: "React",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>React is a front-end web framework written in JavaScript.</p>
+        <p>The bulk of our Single Page Application (SPA) is written with React. The framework enables us to build a well-structured frontend application 
+          out of many small and reusable components. We started replacing our old AngularJS application with React after it became clear that React was better suited to our needs.</p>
+        `
       },
       {
         quadrant: 3,
@@ -289,7 +330,12 @@
         label: "AngularJS",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>AngularJS is a front-end Mode View Whatever (MVW) framework.</p>
+        <p>Older parts of our Single Page Application (SPA) are written in AngularJS (not to be confused with the more modern Angular framework).
+          Most of the code has been replaced with React over the years and we no longer develop new code in AngularJS.</p>
+        `
       },
       {
         quadrant: 3,
@@ -297,7 +343,39 @@
         label: "Redux",
         website: "",
         active: true,
-        moved: 0
+        moved: 0,
+        description:`
+        <p>Redux is a JavaScript framework for managing application state.</p>
+        <p>Older parts of our React code use Redux to manage their state. We found that a lot of our use-cases didn't require Redux and the complexity it brings.
+          We have removed Redux from a large part of our front-end codebase and instead rely on Ladda and Ladda-Observable for API-related state management and caching.</p>
+        `
+      },
+      {
+        quadrant: 3,
+        ring: 0,
+        label: "Ladda",
+        website: "https://www.ladda.io/",
+        active: true,
+        moved: 0,
+        description:`
+        <p>Ladda is an open source JavaScript caching library, written and maintained by Small Improvements.</p>
+        <p>Ladda provides a caching layer to our front-end application. Our client-side code uses Ladda to reliably cache API responses and avoid unnecessary API calls and state updates.
+          </p>
+        `
+      },
+      {
+        quadrant: 3,
+        ring: 2,
+        label: "Jupyter Notebook",
+        website: "",
+        active: true,
+        moved: 0,
+        description:`
+        <p>Jupyter Notebook is open source software to create and share documents containing live code, equations, visualizations, and text.</p>
+        <p>We use Jupyter Notebooks for our experiments with Machine Learning and Data Science. They provide an easy way to try out algorithms/tools 
+          and share the results.
+          </p>
+        `
       },
       {
         quadrant: 3,
@@ -313,6 +391,19 @@
         </p>`,
         active: true,
         moved: 1
+      },
+      {
+        quadrant: 3,
+        ring: 0,
+        label: "Webpack",
+        website: "",
+        active: true,
+        moved: 0,
+        description:`
+        <p>Webpack is an open source JavaScript module bundler.</p>
+        <p>We use Webpack to build our client-side application bundles. Our Webpack build is multifaceted but includes transpiling, code-splitting and tree shaking to 
+          help keep our client-side code as small and compatible as possible.</p>
+        `
       },
     ]
   });
