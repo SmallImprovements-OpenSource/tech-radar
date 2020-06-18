@@ -82,7 +82,7 @@
         active: true,
         moved: 0,
         description:`
-        <p>Domain Driven Design (DDD) is an approach to software development that connects the implementation with an evolving model.</p>
+        <p>Domain-Driven Design (DDD) is an approach to software development that connects the implementation with an evolving model.</p>
         <p>We use DDD where appropriate within our codebase to reduce complexity and keep the coding model close to the reality.</p>`
       },
       {
@@ -170,7 +170,7 @@
         description:`
         <p>Google Datastore is a NoSQL database.</p>
         <p>Datastore goes hand-in-hand with App Engine and hosts our main database. The datastore scales very well and is able to handle a very high load.
-          As with the App Engine, Datastore is fully managed so we don't have to worry about bootstrapping servers and maintainence released.</p>
+          As with the App Engine, Datastore is fully managed so we don't have to worry about bootstrapping servers and maintaining releases.</p>
         `
       },
       {
@@ -194,7 +194,7 @@
         moved: 0,
         description:`
         <p>Google Cloud Functions is a Servlesss cloud computing platform.</p>
-        <p>We use Cloud Functions to perform simple, self contained tasks independantly from the rest of our application. Serverless functions scale up almost infinitely and allow us to deploy new services very quickly.</p>
+        <p>We use Cloud Functions to perform simple, self-contained tasks independently from the rest of our application. Serverless functions scale up almost infinitely and allow us to deploy new services very quickly.</p>
         `
       },
       {
@@ -233,7 +233,7 @@
         active: true,
         moved: 0,
         description:`
-        <p>Java is an Object Oriented programming language. It is the 5th most popular language (behind Js, Html, SQL and Python) according to StackOverflow's most recent survey.</p>
+        <p>Java is an object-oriented programming language. It is the 5th most popular language (behind JavaScript, HTML, SQL and Python) according to StackOverflow's most recent survey.</p>
         <p>We use Java version 8 to run our backend application services, mainly using the Spring web framework.</p>
         `
       },
@@ -246,7 +246,7 @@
         moved: 0,
         description:`
         <p>JavaScript (JS) is an interpreted programming language and provides the client-side (browser) behaviour for modern web applications.</p>
-        <p>We use JS to power our Single Page Application (SPA) using both the angularjs and React frameworks.</p>
+        <p>We use JS to power our Single Page Application (SPA) using both the AngularJS and React frameworks.</p>
         `
       },
       {
@@ -270,7 +270,7 @@
         moved: 0,
         description:`
         <p>Final Form is a JavaScript form library.</p>
-        <p>In combination with React, Final Form powers the majority of the forms in Small Improvements. Final Form makes development of form based applications simpler and less error prone.</p>
+        <p>In combination with React, Final Form powers the majority of the forms in Small Improvements. Final Form makes development of form-based applications simpler and less error prone.</p>
         `
       },
       {
@@ -295,8 +295,8 @@
         moved: -1,
         description:`
         <p>Wicket is a component based web application framework for Java.</p>
-        <p>Used in the early days of Small Improvements, Wicket was a great way build fast and reliably. Wicket has since been replaced by the Spring framework
-          as our Single Page client-side application got increasingly larger and we required REST API's rather then full server-side rendering.</p>
+        <p>Used in the early days of Small Improvements, Wicket was a great way to build web applications fast and reliably. Wicket has since been replaced by the Spring framework
+          as our Single Page client-side application got increasingly larger and we required REST APIs rather than full server-side rendering.</p>
         `
       },
       {
@@ -320,8 +320,8 @@
         moved: 0,
         description:`
         <p>React is a front-end web framework written in JavaScript.</p>
-        <p>The bulk of our Single Page Application (SPA) is written with React. The framework enables us to build large, a well-structured frontend application 
-          out of many small components. We started replacing our old angularjs application with React after it became clear that React was better suited to our needs.</p>
+        <p>The bulk of our Single Page Application (SPA) is written with React. The framework enables us to build a well-structured frontend application 
+          out of many small and reusable components. We started replacing our old AngularJS application with React after it became clear that React was better suited to our needs.</p>
         `
       },
       {
@@ -333,7 +333,7 @@
         moved: 0,
         description:`
         <p>AngularJS is a front-end Mode View Whatever (MVW) framework.</p>
-        <p>Older parts of our Single Page Application (SPA) are written in angularjs (not to be confused with the more modern Angular framework).
+        <p>Older parts of our Single Page Application (SPA) are written in AngularJS (not to be confused with the more modern Angular framework).
           Most of the code has been replaced with React over the years and we no longer develop new code in AngularJS.</p>
         `
       },
@@ -347,7 +347,7 @@
         description:`
         <p>Redux is a JavaScript framework for managing application state.</p>
         <p>Older parts of our React code use Redux to manage their state. We found that a lot of our use-cases didn't require Redux and the complexity it brings.
-          We have removed Redux from a large part of our front-end codebase and instead rely on Ladda and Ladda-Observable to return the latest state of a resource.</p>
+          We have removed Redux from a large part of our front-end codebase and instead rely on Ladda and Ladda-Observable for API-related state management and caching.</p>
         `
       },
       {
@@ -359,8 +359,7 @@
         moved: 0,
         description:`
         <p>Ladda is an open source JavaScript caching library, written and maintained by Small Improvements.</p>
-        <p>Ladda was written in house at Small Improvements and provides a caching layer to our front-end application.
-          Most of our client-side code uses Ladda to avoid making extra, unnecessary calls to our API.
+        <p>Ladda provides a caching layer to our front-end application. Our client-side code uses Ladda to reliably cache API responses and avoid unnecessary API calls and state updates.
           </p>
         `
       },
@@ -373,7 +372,7 @@
         moved: 0,
         description:`
         <p>Jupyter Notebook is open source software to create and share documents containing live code, equations, visualizations, and text.</p>
-        <p>We use Jupyter Notebooks for our experiments with Machine Learninng and Data Science. They provide an easy way to try out algorithms/tools 
+        <p>We use Jupyter Notebooks for our experiments with Machine Learning and Data Science. They provide an easy way to try out algorithms/tools 
           and share the results.
           </p>
         `
@@ -403,7 +402,7 @@
         description:`
         <p>Webpack is an open source JavaScript module bundler.</p>
         <p>We use Webpack to build our client-side application bundles. Our Webpack build is multifaceted but includes transpiling, code-splitting and tree shaking to 
-          help keep our client-side code as small and compabile as possible.</p>
+          help keep our client-side code as small and compatible as possible.</p>
         `
       },
     ]
